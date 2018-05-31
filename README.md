@@ -6,7 +6,7 @@
 
 最简单的正则表达式就是从左到右逐字匹配，并且大小写敏感。如`am`，则会去字符串中搜索`a`，挨着搜索`m`。
 
-```
+``` javascript
 var regex = /am/g;
 var string = "I [am](/#) palmer";
 console.log( string.match(regex) ); 
