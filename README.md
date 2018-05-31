@@ -8,7 +8,7 @@
 
 ``` javascript
 var regex = /am/g;
-var string = "I [am](/#) palmer";
+var string = "I am palmer";
 console.log( string.match(regex) ); 
 // => ["am"]
 ```
@@ -31,6 +31,53 @@ console.log( string.match(regex) );
 |&#92;|转义字符,用于匹配一些保留的字符 <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
 |^|从开始行开始匹配.|
 |$|从末端开始匹配.|
+
+#### 点运算符`.`
+
+点运算符`.`，通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。
+
+``` javascript
+var regex = /.m/g;
+var string = "I am palmer";
+console.log( string.match(regex) );
+// => ["am", "lm"]
+```
+
+#### 字符集`[ ]`
+
+方括号用来指定一个字符集，且不关心顺序。如`/[al]m/g`和`/[la]m/g`的匹配结果是一样的。
+
+``` javascript
+var regex = /[al]m/g;
+var string = "I am palmer";
+console.log( string.match(regex) );
+// => ["am", "lm"]
+```
+
+##### 否定字符集`[^ ]`
+
+`^`用在一个方括号的开头的时候, 它表示这个字符集是否定的，如表示后面跟着`m`的除`l`以外的任意字符
+
+``` javascript
+var regex = /[^l]m/g;
+var string = "I am palmer";
+console.log( string.match(regex) );
+// => ["am"]
+```
+
+#### 重复
+
+##### `*`
+
+##### `+`
+
+##### `?`
+
+
+
+#### 点运算符`.`
+
+#### 点运算符`.`
 
 ### 简写字符集
 
