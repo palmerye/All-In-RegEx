@@ -6,7 +6,7 @@
 
 最简单的正则表达式就是从左到右逐字匹配。如`am`，则会去字符串中搜索`a`，挨着搜索`m`。
 
-> "am" => I [am](https://palmer.arkstack.cn/#) palmer.
+> "am" => I [am](/#) palmer.
 
 ### 元字符
 
