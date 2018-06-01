@@ -160,7 +160,31 @@ console.log( string.match(regex) );
 // => ["abab", "ab", "ababab"]
 ```
 
+`()`也可以用来提取数据, 看下面的例子, 加上`()`的时候结果中可以提取括号里的内容.
 
+``` javascript
+var regex1 = /\d{4}-\d{2}-\d{2}/;
+var regex2 = /(\d{4})-(\d{2})-(\d{2})/;
+var string = "2016-05-15";
+console.log( string.match(regex1) );
+console.log( string.match(regex2) );
+// => ["2016-05-15", index: 0, input: "2016-05-15", groups: undefined]
+// => ["2016-05-15", "2016", "05", "15", index: 0, input: "2016-05-15", groups: undefined]
+```
+
+在一些替换场景的时候, `()`也很强大. 看下面的例子, 需要将`yyyy-mm-dd`格式，替换成`mm/dd/yyyy`, 就可以用到构造函数的全局属性$1至$9.
+
+``` javascript
+var regex = /(\d{4})-(\d{2})-(\d{2})/;
+var string = "2016-05-15";
+console.log( string.replace(regex, "$2/$3/$1"));
+// => 05/15/2016
+
+等价于
+string.replace(regex, function(match, year, month, day) {
+	return month + "/" + day + "/" + year;
+});
+```
 
 
 #### 点运算符`.`
