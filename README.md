@@ -149,6 +149,18 @@ console.log( string.match(regex) );
 // => ["Am", "m"]
 ```
 
+#### 分组 `()`
+
+`()`其实相对于是子模式，提供了分组，可以被js或者正则引用。
+
+``` javascript
+var regex = /(ab)+/g;
+var string = "ababa abbb ababab";
+console.log( string.match(regex) ); 
+// => ["abab", "ab", "ababab"]
+```
+
+
 
 
 #### 点运算符`.`
