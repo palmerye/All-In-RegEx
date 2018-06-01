@@ -67,13 +67,42 @@ console.log( string.match(regex) );
 
 #### 重复
 
-##### `*`
+##### `*` 出现 >= 0次
 
-##### `+`
+`*`号匹配在`*`之前的字符出现大于等于0次.
 
-##### `?`
+``` javascript
+var regex = /[A-Z]*/g;
+var string = "I Am Palmer";
+console.log( string.match(regex) );
+// => ["I", "", "A", "", "", "P", "", "", "", "", "", ""]
+// 这里为什么长度为12， 而`I Am Palmer`长度为11？
 
+var regex = /.*/g;
+var string = "";
+console.log( string.match(regex) );
+// => 结果居然是[""]，string的长度为0，但match结果是1？
+```
 
+##### `+` 出现 >= 1次
+
+`+`号匹配`+`号之前的字符出现大于等于1 次.
+
+``` javascript
+var regex = /[A-Z]+/g;
+var string = "I Am Palmer";
+console.log( string.match(regex) );
+// => ["I", "A", "P"]
+```
+
+##### `?` 出现 0次或者1次
+
+``` javascript
+var regex = /[^l]m/g;
+var string = "I am palmer";
+console.log( string.match(regex) );
+// => ["am"]
+```
 
 #### 点运算符`.`
 
