@@ -186,6 +186,27 @@ string.replace(regex, function(match, year, month, day) {
 });
 ```
 
+`()`也可以反向引用, 比如我们要匹配以下三种格式.
+
+```
+2016-05-12
+2016/05/12
+2016.05.12
+```
+
+想当然的写法是这样, 但这样也会匹配到类似`2016/12.4`这样的字符串.这个时候可以用`\1` `\2` `\3`来引用第n个括号里的模式.比如
+
+``` javascript
+var regex = /\d{4}(-|\/|\.)\d{2}(-|\/|\.)\d{2}/;
+var regex1 = /\d{4}(-|\/|\.)\d{2}\1\d{2}/; // 这里的 \1 就代表引用之前的第1个分组, 不管第1个分组匹配到什么, \1 这里也匹配相同的字符.
+var string = "2016-05-15";
+var string1 = "2016-05.15";
+console.log( regex.test(string) ); // => true
+console.log( regex.test(string1) ); // => true
+console.log( regex1.test(string) ); // => true
+console.log( regex1.test(string1) ); // => false
+```
+
 
 #### 点运算符`.`
 
