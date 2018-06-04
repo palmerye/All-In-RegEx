@@ -208,6 +208,19 @@ console.log( regex1.test(string1) ); // => false
 ```
 
 
+#### 或运算符`|`
+
+顾名思义, 就代表或.
+
+``` javascript
+var regex = /(a|l)m|I/g;
+var string = "I am Palmer";
+console.log( string.match(regex) ); 
+// => ["I", "am", "lm"]
+```
+
+#### 点运算符`.`
+
 #### 点运算符`.`
 
 ### 简写字符集
