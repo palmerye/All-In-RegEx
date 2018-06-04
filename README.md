@@ -219,9 +219,29 @@ console.log( string.match(regex) );
 // => ["I", "am", "lm"]
 ```
 
-#### 点运算符`.`
+#### 转义字符`\`
 
-#### 点运算符`.`
+转义紧随其后的字符, 用来转码`{ } [ ] / \ + * . $ ^ | ?`这些特殊字符.
+
+#### 开头`^`结尾`$`
+
+`^`用来检查匹配的字符串(后)是否在所匹配字符串的开头
+
+``` javascript
+var regex = /^I/g;
+var string = "I am In.";
+console.log( string.match(regex) ); 
+// => ["I"]
+```
+
+`$`用来检查匹配的字符串(前)是否在所匹配字符串的结尾
+
+``` javascript
+var regex = /r\.$/g;
+var string = "I ar Palmer.";
+console.log( string.match(regex) ); 
+// => ["r."]
+```
 
 ### 简写字符集
 
