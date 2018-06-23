@@ -268,11 +268,40 @@ console.log( string.match(regex) );
 
 ### 手机号
 
+``` javascript
+yyyy-mm-dd
+/\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])/
+```
+
 ### 邮箱
+
+``` javascript
+/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+\.){1,63}[a-z0-9]+$/
+```
 
 ### 邮编
 
+``` javascript
+/^[1-9][0-9]{5}$/
+```
+
+### 日期
+
+``` javascript
+yyyy-mm-dd
+/\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])/
+```
+
+### 去除文本首尾空白字符
+
+``` javascript
+const str = '  hello world  '
+str.replace(/^\s+|\s$/g, '')
+```
 
 [参考文献]
 
 [https://github.com/zeeshanu/learn-regex](https://github.com/zeeshanu/learn-regex)
+
+[工具]
+[https://regexper.com](https://regexper.com)
