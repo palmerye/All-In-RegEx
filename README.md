@@ -298,6 +298,12 @@ yyyy-mm-dd
 var regex = /\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])/
 ```
 
+### URL
+
+``` javascript
+var regex = /((http|https)(:\/\/))?([a-zA-Z0-9]+[.]{1}){2}[a-zA-z0-9]+(\/{1}[a-zA-Z0-9]+)*\/?/
+```
+
 ### 去除文本首尾空白字符
 
 ``` javascript
@@ -310,4 +316,5 @@ str.replace(/^\s+|\s$/g, '')
 [https://github.com/zeeshanu/learn-regex](https://github.com/zeeshanu/learn-regex)
 
 [工具]
+
 [https://regexper.com](https://regexper.com)
