@@ -311,6 +311,29 @@ const str = '  hello world  '
 str.replace(/^\s+|\s$/g, '')
 ```
 
+## RegExp对象方法
+
+| 方法 | 说明 | 返回 |
+| ------ | ------ | ------ |
+| `pattern.test(str)` | 判断str是否包含匹配结果 | 包含返回true，不包含返回false |
+| `pattern.exec(str)` | 根据pattern对str进行正则匹配 | 返回匹配结果数组, 如匹配不到返回null, 特殊数组 |
+| `str.match(pattern)` | 根据pattern对str进行正则匹配 | 返回匹配结果数组, 如匹配不到返回null, 非全局 /g 下为特殊数组 |
+| `str.replace(pattern, replacement)` | 根据pattern进行正则匹配, 把匹配结果替换为replacement | 中等文本 |
+
+> exec 是 RegExp 对象的方法, match 是 String 对象的方法; 而且在非全局 /g 下, match 和 exec 的返回是一样的
+
+``` javascript
+var a = 'aaaa'.match(/\w/g)
+console.log(a) // ["a", "a", "a", "a"]
+
+var a = 'aaaa'.match(/\w/)
+console.log(a) // ["a", index: 0, input: "aaaa", groups: undefined]
+
+var a = /\w/.exec('aaaa')
+console.log(a) // ["a", index: 0, input: "aaaa", groups: undefined]
+
+```
+
 [参考文献]
 
 [https://github.com/zeeshanu/learn-regex](https://github.com/zeeshanu/learn-regex)
